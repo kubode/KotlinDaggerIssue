@@ -15,8 +15,10 @@ Kotlin does not generate `XxxModule_ProvideXxxFactory` classes when using same t
 ```
 
 In pure java case, `ActivityModule_ProvideStringFactory` and `ApplicationModule_ProvideStringFactory` are created.
+(`:java:build` task success.)
 
 But pure kotlin case, `ActivityModule_ProvideStringFactory` and `ApplicationModule_ProvideStringFactory` are not created.
+(`:kotlin:build` task fails.)
 
 
 Using versions:
