@@ -1,0 +1,30 @@
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+
+android {
+    compileSdkVersion 23
+    buildToolsVersion '23.0.2'
+
+    defaultConfig {
+        applicationId 'com.teamlab.kotlin.dagger.issue.kotlin'
+        minSdkVersion 21
+        targetSdkVersion 23
+        versionCode 1
+        versionName '1.0'
+    }
+}
+
+android.sourceSets.all {
+    java.srcDirs += "src/${name}/kotlin"
+}
+
+kapt {
+    generateStubs = true
+}
+
+dependencies {
+    compile "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
+    compile "com.google.dagger:dagger:$dagger_version"
+    kapt "com.google.dagger:dagger-compiler:$dagger_version"
+    provided 'org.glassfish:javax.annotation:10.0-b28'
+}
